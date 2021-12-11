@@ -1,0 +1,31 @@
+.bg {
+    background-image: url("background.jpg");
+    background-size: cover;
+}
+.head {
+    width: 100%;
+    font-size: 26px;
+    margin: 0;
+}
+.note {
+    color: black;
+    font-size: 18px;
+}
+.div_speed {
+    float: left;
+}
+.gifs {
+    width: 200px;
+    border-radius: 100px;
+}
+#speed, #volume {
+    font-size: 22px;
+}
+.div_vol {
+    float: right;
+}
+canvas {
+    border: dashed 2px orange;
+    margin-top: 140px;
+    box-shadow: 0px 0px 50px orangered;
+}
