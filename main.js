@@ -45,14 +45,37 @@ function getPoses(results) {
 }
 function draw() {
     image(video, 0, 0, 600, 400);
+    fill("red");
+    stroke("red");
     if (leftWrist_score > 0.2) {
-        fill("red");
-        stroke("red");
         circle(left_wristX, left_wristY, 20);
         no_left = Number(left_wristY);
         no_left_floor = floor(no_left);
         volume = no_left_floor/400;
         song.setVolume(volume);
         document.getElementById("volume").innerHTML = "Volume: " + volume;
+    }
+    if (rightWrist_score > 0.2) {
+        circle(right_wristX, right_wristY, 20);
+        if (right_wristY > 0 && right_wristY <= 80) {
+            song.rate(0.5);
+            document.getElementById("speed").innerHTML = "speed = 0.5x";
+        }
+        if (right_wristY > 80 && right_wristY <= 160) {
+            song.rate(1);
+            document.getElementById("speed").innerHTML = "speed = 1x";
+        }
+        if (right_wristY > 160 && right_wristY <= 240) {
+            song.rate(1.5);
+            document.getElementById("speed").innerHTML = "speed = 1.5x";
+        }
+        if (right_wristY > 240 && right_wristY <= 320) {
+            song.rate(2);
+            document.getElementById("speed").innerHTML = "speed = 2x";
+        }
+        if (right_wristY > 320 && right_wristY <= 400) {
+            song.rate(2.5);
+            document.getElementById("speed").innerHTML = "speed = 2.5x";
+        }
     }
 }
